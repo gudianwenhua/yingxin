@@ -2,394 +2,99 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>广东省佛山市顺德区九洲实验学校 - 数字迎新系统</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>广东省佛山市顺德区九洲实验学校 - 企业微信加入邀请</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: "Microsoft YaHei", PingFang SC, sans-serif;
+            font-family: "Microsoft YaHei", sans-serif;
         }
         body {
-            /* 浅绿渐变背景 复刻原图柔和渐变 */
-            background: linear-gradient(135deg, #f0fbf3 0%, #dcf5e5 100%);
+            background: linear-gradient(135deg, #165DFF, #4080FF);
             min-height: 100vh;
             padding: 40px 20px;
         }
-        /* 页面容器 整体居中 */
-        .container {
-            max-width: 900px;
+        .card-box {
+            background: #fff;
+            border-radius: 20px;
+            padding: 35px 25px;
+            max-width: 520px;
             margin: 0 auto;
-        }
-        /* 顶部头部区域 */
-        .page-header {
             text-align: center;
-            margin-bottom: 60px;
+            box-shadow: 0 8px 30px rgba(0,60,180,0.25);
         }
-        .header-top {
+        /* 学校LOGO样式 */
+        .school-logo {
+            width: 220px;
+            height: 140px;
+            margin: 0 auto 24px;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 12px;
-            margin-bottom: 20px;
         }
-        .logo-circle {
-            width: 56px;
-            height: 56px;
-            border: 2px solid #107838;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-            overflow: hidden;
-            color: #107838;
-            font-weight: bold;
-        }
-        /* 校徽图片自适应圆形容器 */
-        .logo-circle img {
+        .school-logo img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain;
         }
-        .school-name {
-            font-size: 26px;
-            color: #0f5e2c;
-            font-weight: 500;
-        }
-        .main-title {
-            font-size: 42px;
-            color: #0b4d23;
-            font-weight: 600;
+        h1 {
+            font-size: 22px;
+            color: #1a1a1a;
             margin-bottom: 12px;
+            line-height: 1.4;
         }
         .sub-title {
-            font-size: 20px;
-            color: #20663b;
-            letter-spacing: 2px;
-            position: relative;
-        }
-        .sub-title::before, .sub-title::after {
-            content: "——";
-            opacity: 0.6;
-            margin: 0 24px;
-        }
-        /* 功能卡片大容器 居中 */
-        .card-wrapper {
-            background: #ffffff;
-            border-radius: 24px;
-            padding: 40px;
-            box-shadow: 0 8px 30px rgba(16, 120, 56, 0.08);
-        }
-        /* 单个功能卡片样式 完全复刻原图 */
-        .func-card {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 22px 18px;
-            border-radius: 16px;
-            margin-bottom: 16px;
-            background: #fff;
-            cursor: pointer;
-            transition: all 0.25s ease;
-        }
-        .func-card:hover {
-            background-color: #f4fcf7;
-        }
-        .func-card:last-child {
-            margin-bottom: 0;
-        }
-        /* 左侧内容：数字圆圈+文字 */
-        .card-left {
-            display: flex;
-            align-items: flex-start;
-            gap: 16px;
-        }
-        .num-badge {
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            background-color: #18a048;
-            color: #fff;
-            font-size: 22px;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-        }
-        .card-text h3 {
-            font-size: 24px;
-            color: #0b4d23;
-            margin-bottom: 6px;
-        }
-        .card-text p {
             font-size: 15px;
-            color: #556b5d;
+            color: #666;
+            margin-bottom: 30px;
             line-height: 1.6;
         }
-        /* 右侧箭头 */
-        .arrow-right {
-            font-size: 28px;
-            color: #18a048;
-            font-weight: 300;
-        }
-        /* ========== 子页面通用样式 ========== */
-        .sub-page {
-            display: none;
-            padding: 30px;
-            background: #fff;
-            border-radius: 24px;
-            box-shadow: 0 8px 30px rgba(16, 120, 56, 0.08);
-        }
-        .back-home {
-            padding: 10px 20px;
-            border: 1px solid #18a048;
-            color: #18a048;
-            background: transparent;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 16px;
+        .invite-desc {
+            background: #f5f7fa;
+            padding: 18px 15px;
+            border-radius: 12px;
+            color: #333;
+            font-size: 15px;
             margin-bottom: 30px;
+            line-height: 1.7;
+        }
+        .join-btn {
+            display: block;
+            width: 100%;
+            background: #165DFF;
+            color: white;
+            text-decoration: none;
+            font-size: 17px;
+            font-weight: 500;
+            padding: 16px 0;
+            border-radius: 12px;
             transition: 0.2s;
         }
-        .back-home:hover {
-            background: #18a048;
-            color: white;
+        .join-btn:active {
+            background: #0e4bdb;
         }
-        .content-title {
-            font-size: 28px;
-            color: #0b4d23;
-            margin-bottom: 20px;
-            padding-bottom: 12px;
-            border-bottom: 1px solid #e2f3e9;
-        }
-        .content-desc {
-            line-height: 1.8;
-            color: #44584e;
-            font-size: 16px;
-        }
-        .form-box {
+        .tip-text {
             margin-top: 25px;
-        }
-        .form-item {
-            margin: 18px 0;
-        }
-        .form-item label {
-            display: block;
-            margin-bottom: 6px;
-            color: #0b4d23;
-        }
-        .form-item input, .form-item select {
-            width: 100%;
-            padding: 11px 14px;
-            border: 1px solid #c8e4d5;
-            border-radius: 8px;
-            font-size: 15px;
-        }
-        .submit-btn {
-            width: 100%;
-            padding: 13px;
-            background: #18a048;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            font-size: 17px;
-            cursor: pointer;
-        }
-        /* 首页默认展示 */
-        #home {
-            display: block;
+            font-size: 13px;
+            color: #999;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <!-- 顶部标题区域 -->
-        <div class="page-header">
-            <div class="header-top">
-                <!-- ====================== 【可修改校徽图片位置】 ====================== -->
-                <!-- src="" 引号内替换成你的校徽图片路径/网络图片地址 -->
-                <!-- 本地图片示例：src="logo.png"  网络图片示例：src="https://xxx/logo.jpg" -->
-                <div class="logo-circle">
-                    <img src="图片1.png" alt="学校校徽">
-                </div>
-                <!-- ================================================================== -->
-                <div class="school-name">广东省佛山市顺德区九洲实验学校</div>
-            </div>
-            <h1 class="main-title">数字迎新系统</h1>
-            <div class="sub-title">一站式完成入学前置手续</div>
+    <div class="card-box">
+        <!-- 学校建筑LOGO -->
+        <div class="school-logo">
+            <img src="图片1.png" alt="广东省佛山市顺德区九洲实验学校">
         </div>
-
-        <!-- 首页主卡片区域 -->
-        <div id="home" class="card-wrapper">
-            <!-- 1. 企业微信 【可修改跳转地址】 -->
-            <!-- onclick openUrl('这里填页面链接') 引号内替换目标网页地址 -->
-            <div class="func-card" onclick="openUrl('https://work.weixin.qq.com/join/gV-gATRoEVC4r2iRYZatvA/hb_share_mng_contacts')">
-                <div class="card-left">
-                    <div class="num-badge">1</div>
-                    <div class="card-text">
-                        <h3>企业微信</h3>
-                        <p>加入学校企业微信，下载APP并完成身份绑定</p>
-                    </div>
-                </div>
-                <div class="arrow-right">→</div>
-            </div>
-
-            <!-- 2. 数字迎新（信息采集）【可修改跳转地址】 -->
-            <div class="func-card" onclick="openUrl('https://doc.weixin.qq.com/forms/AG8AVAfrAEUAcAAUQbBANwCN9MufHqA0f?page=1')">
-                <div class="card-left">
-                    <div class="num-badge">2</div>
-                    <div class="card-text">
-                        <h3>数字迎新</h3>
-                        <p>信息采集、新生报备、与自助服务办理</p>
-                    </div>
-                </div>
-                <div class="arrow-right">→</div>
-            </div>
-
-            <!-- 3. 自助服务【可修改跳转地址】 -->
-            <div class="func-card" onclick="openUrl('https://doc.weixin.qq.com/forms/AG8AVAfrAEUAcAAUQbBANwCNF3ALXR6cf?page=1')">
-                <div class="card-left">
-                    <div class="num-badge">3</div>
-                    <div class="card-text">
-                        <h3>自助服务</h3>
-                        <p>生源地贷款申请与进度查询</p>
-                    </div>
-                </div>
-                <div class="arrow-right">→</div>
-            </div>
-
-            <!-- 4. 迎新咨询客服【可修改跳转地址】 -->
-            <div class="func-card" onclick="openUrl('https://work.weixin.qq.com/kfid/kfc1c3bddfd3492d89f')">
-                <div class="card-left">
-                    <div class="num-badge">4</div>
-                    <div class="card-text">
-                        <h3>迎新咨询</h3>
-                        <p>系统操作问题咨询与技术支持</p>
-                    </div>
-                </div>
-                <div class="arrow-right">→</div>
-            </div>
+        <h1>广东省佛山市顺德区九洲实验学校</h1>
+        <div class="sub-title">企业微信成员加入邀请</div>
+        <div class="invite-desc">
+            点击链接加入我的企业“广东省佛山市顺德区九洲实验学校”，一起开启全新办公体验吧。
         </div>
-
-        <!-- 页面1：加入企业微信详情页（备用弹窗页面，保留返回首页） -->
-        <div id="page1" class="sub-page">
-            <button class="back-home" onclick="backToHome()">← 返回首页</button>
-            <h2 class="content-title">加入学校企业微信指引</h2>
-            <div class="content-desc">
-                <p>企业微信是我校官方校内通讯平台，全体新生必须完成加入绑定，解锁全部迎新系统权限：</p>
-                <ol style="padding-left: 22px;margin-top:12px;">
-                    <li>手机应用商店下载「企业微信」官方APP</li>
-                    <li>打开软件，选择【加入企业】入口</li>
-                    <li>输入学校名称：广东省佛山市顺德区九洲实验学校</li>
-                    <li>手机号验证后自动归入新生年级架构</li>
-                    <li>绑定成功即可使用人脸核验、信息填报等所有功能</li>
-                </ol>
-                <p style="color:#18a048;margin-top:15px;font-weight:500;">温馨提示：未绑定企业微信无法提交新生资料</p>
-            </div>
-        </div>
-
-        <!-- 页面2：数字迎新（信息采集、缴费、选宿舍） -->
-        <div id="page2" class="sub-page">
-            <button class="back-home" onclick="backToHome()">← 返回首页</button>
-            <h2 class="content-title">数字迎新 信息采集填报</h2>
-            <div class="content-desc">
-                <p>请如实填写个人学籍信息，同步至学校教务系统，支持学费缴纳、宿舍自选办理：</p>
-                <div class="form-box">
-                    <div class="form-item">
-                        <label>姓名</label>
-                        <input type="text" placeholder="请填写真实姓名">
-                    </div>
-                    <div class="form-item">
-                        <label>身份证号码</label>
-                        <input type="text" placeholder="18位身份证编号">
-                    </div>
-                    <div class="form-item">
-                        <label>录取通知书编号</label>
-                        <input type="text" placeholder="通知书上方编码">
-                    </div>
-                    <div class="form-item">
-                        <label>住宿申请</label>
-                        <select>
-                            <option>申请住校</option>
-                            <option>走读不住校</option>
-                        </select>
-                    </div>
-                    <div class="form-item">
-                        <label>家长紧急联系电话</label>
-                        <input type="tel" placeholder="监护人手机号">
-                    </div>
-                    <button class="submit-btn" onclick="alert('信息提交成功！可前往缴费与宿舍选择页面')">提交信息</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- 页面3：自助服务 助学贷款查询 -->
-        <div id="page3" class="sub-page">
-            <button class="back-home" onclick="backToHome()">← 返回首页</button>
-            <h2 class="content-title">自助服务 · 生源地助学贷款</h2>
-            <div class="content-desc">
-                <p>面向家庭经济困难学生开通助学贷款线上申请、进度查询、回执录入服务：</p>
-                <ul style="padding-left: 22px;margin-top:12px;">
-                    <li>在线填写贷款申请基础资料</li>
-                    <li>上传贷款受理证明电子版</li>
-                    <li>实时查看审批发放进度</li>
-                    <li>贷款回执线上提交至学校财务处</li>
-                </ul>
-                <button class="submit-btn" style="margin-top:20px;" onclick="alert('正在调取助学贷款进度...')">查询贷款进度</button>
-            </div>
-        </div>
-
-        <!-- 页面4：迎新在线客服咨询 -->
-        <div id="page4" class="sub-page">
-            <button class="back-home" onclick="backToHome()">← 返回首页</button>
-            <h2 class="content-title">迎新在线客服中心</h2>
-            <div class="content-desc">
-                <div style="border:1px solid #d4e9dd;border-radius:12px;height:280px;padding:15px;overflow-y:auto;background:#f9fdfb;margin-bottom:15px;" id="chatArea">
-                    <p style="color:#18a048;">客服：您好！欢迎咨询迎新系统各类问题，请问您遇到了什么问题？</p>
-                </div>
-                <div style="display:flex;gap:10px;">
-                    <input type="text" id="chatInput" style="flex:1;padding:11px;border:1px solid #c8e4d5;border-radius:8px;" placeholder="输入问题发送咨询">
-                    <button onclick="sendChat()" style="padding:0 20px;background:#18a048;color:white;border:none;border-radius:8px;cursor:pointer;">发送</button>
-                </div>
-                <p style="margin-top:16px;font-size:14px;color:#666;">服务时间：工作日 8:30-17:30 | 咨询热线：0765-88XXXXXX</p>
-            </div>
-        </div>
+        <a href="https://work.weixin.qq.com/join/NcP5sYNePuSwwqZzRWjvfA/hb_share_mng_contacts" class="join-btn">立即加入企业微信</a>
+        <div class="tip-text">温馨提示：建议在微信内打开本页面跳转加入</div>
     </div>
-
-    <script>
-        // 【跳转新页面函数】点击卡片会新开标签页访问填写的url
-        function openUrl(targetUrl) {
-            window.open(targetUrl, "_blank");
-        }
-
-        // 返回首页函数：隐藏所有子页面，展示首页卡片
-        function backToHome() {
-            document.querySelectorAll('.sub-page').forEach(page => {
-                page.style.display = 'none';
-            })
-            document.getElementById('home').style.display = 'block';
-            window.scrollTo(0, 0);
-        }
-
-        // 客服聊天发送消息（保留原有聊天功能，不改动）
-        function sendChat() {
-            const input = document.getElementById('chatInput');
-            const chatBox = document.getElementById('chatArea');
-            let msg = input.value.trim();
-            if (!msg) return;
-            // 用户消息
-            chatBox.innerHTML += `<p style="text-align:right;margin:8px 0;">我：${msg}</p>`;
-            input.value = "";
-            chatBox.scrollTop = chatBox.scrollHeight;
-            // 客服自动回复
-            setTimeout(() => {
-                chatBox.innerHTML += `<p style="color:#18a048;margin:8px 0;">客服：已收到你的问题，工作人员将尽快为您解答~</p>`;
-                chatBox.scrollTop = chatBox.scrollHeight;
-            }, 700)
-        }
-    </script>
 </body>
 </html>
